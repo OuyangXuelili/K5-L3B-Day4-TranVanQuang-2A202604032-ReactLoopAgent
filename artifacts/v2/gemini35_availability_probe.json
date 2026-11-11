@@ -1,0 +1,30 @@
+{
+  "probe_only": true,
+  "not_part_of_main_comparison": true,
+  "model": "gemini-3.5-flash-lite",
+  "grade": {
+    "score": 100,
+    "raw_judge_score": 100,
+    "dimensions": {
+      "factuality": 40,
+      "completeness": 25,
+      "evidence": 20,
+      "boundaries": 15
+    },
+    "status": "scored",
+    "reason": "Agent đã trả lời chính xác, đầy đủ dựa trên dữ liệu từ tool, xác định rõ tại thời điểm hiện tại GitHub Actions không có sự cố và tổng hợp đúng các incident gần đây (ngày 4/11 và 5/11) kèm dẫn nguồn đầy đủ.",
+    "improvement": "Không có điểm cần cải thiện.",
+    "mechanical": {
+      "violations": [],
+      "score_cap": 100,
+      "tool_calls": 5,
+      "tool_steps": 4
+    },
+    "judge_usage": {
+      "completion_tokens": 109,
+      "prompt_tokens": 3860,
+      "total_tokens": 3969
+    },
+    "judge_trace_truncated": false
+  }
+}

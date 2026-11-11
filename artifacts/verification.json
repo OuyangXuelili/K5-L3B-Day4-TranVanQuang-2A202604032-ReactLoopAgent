@@ -1,0 +1,29 @@
+{
+  "verified_at_utc": "2026-11-11T14:28:24.726096+00:00",
+  "hash_normalization": "lf",
+  "implementation": "v2-investigation-checklist",
+  "tests_passed": 85,
+  "test_suites": {
+    "tests": 82,
+    "bonus": 3
+  },
+  "real_llm_eval_status": "all_scored",
+  "root_reports_match_current_source": true,
+  "scored_cases": {
+    "before": 22,
+    "after": 22,
+    "bonus": 10
+  },
+  "same_core_config": true,
+  "api_key_absent_from_deliverable_files": true,
+  "deliverable_files_scanned": 142,
+  "env_ignored": true,
+  "protected_files_unchanged": 10,
+  "python_3_10_syntax_compatible": 26,
+  "git_diff_check": "pass",
+  "final_report_sha256": {
+    "eval_before.json": "504df7ab4910c162b65246ce064c441608d3eb59f16c3836a1d9f31feb6ddaf3",
+    "eval_after.json": "0ef5dcc3b3af1c660ce7155587d404d3eaa0a927a97b0e4cbb0bdc751ad439e2",
+    "eval_bonus.json": "d6b8979ea0383eb5b2882f4aca9034b9f8a190f3a42dbc61d7ce8d893d5dcebc"
+  }
+}

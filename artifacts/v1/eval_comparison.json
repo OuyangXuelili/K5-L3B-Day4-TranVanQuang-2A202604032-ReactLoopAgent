@@ -1,0 +1,198 @@
+{
+  "same_config": true,
+  "config_differences": {},
+  "before": {
+    "total_cases": 22,
+    "scored_cases": 22,
+    "unscored_cases": 0,
+    "score_0_100": 92.36,
+    "partial_mean_0_100": null,
+    "agent_model_calls": 43,
+    "source_revision_events": 0,
+    "agent_usage": {
+      "tokens": 53834,
+      "cost_usd": 0.02234774
+    },
+    "judge_usage": {
+      "tokens": 32644,
+      "cost_usd": 0.016446
+    },
+    "total_cost_usd": 0.03879374,
+    "mechanical_violations": {
+      "H1": [
+        "Cần tool calls ở ít nhất 2 model steps khác nhau."
+      ],
+      "H2": [
+        "Chưa gọi tool cần thiết: get_status"
+      ],
+      "H3": [
+        "Chưa gọi tool cần thiết: get_incident_details"
+      ]
+    }
+  },
+  "after": {
+    "total_cases": 22,
+    "scored_cases": 22,
+    "unscored_cases": 0,
+    "score_0_100": 91.45,
+    "partial_mean_0_100": null,
+    "agent_model_calls": 45,
+    "source_revision_events": 2,
+    "agent_usage": {
+      "tokens": 57132,
+      "cost_usd": 0.02366156
+    },
+    "judge_usage": {
+      "tokens": 32733,
+      "cost_usd": 0.0160217
+    },
+    "total_cost_usd": 0.03968326,
+    "mechanical_violations": {
+      "H1": [
+        "Cần tool calls ở ít nhất 2 model steps khác nhau."
+      ],
+      "H2": [
+        "Chưa gọi tool cần thiết: get_status"
+      ],
+      "H3": [
+        "Chưa gọi tool cần thiết: get_incident_details"
+      ]
+    }
+  },
+  "score_delta": -0.91,
+  "cases": [
+    {
+      "id": "E1",
+      "before": 100,
+      "after": 95,
+      "delta": -5
+    },
+    {
+      "id": "E2",
+      "before": 100,
+      "after": 80,
+      "delta": -20
+    },
+    {
+      "id": "E3",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "E4",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "E5",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "E6",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "A1",
+      "before": 98,
+      "after": 98,
+      "delta": 0
+    },
+    {
+      "id": "A2",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "A3",
+      "before": 100,
+      "after": 98,
+      "delta": -2
+    },
+    {
+      "id": "A4",
+      "before": 90,
+      "after": 98,
+      "delta": 8
+    },
+    {
+      "id": "A5",
+      "before": 90,
+      "after": 100,
+      "delta": 10
+    },
+    {
+      "id": "A6",
+      "before": 98,
+      "after": 98,
+      "delta": 0
+    },
+    {
+      "id": "A7",
+      "before": 100,
+      "after": 87,
+      "delta": -13
+    },
+    {
+      "id": "A8",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "H1",
+      "before": 60,
+      "after": 60,
+      "delta": 0
+    },
+    {
+      "id": "H2",
+      "before": 50,
+      "after": 50,
+      "delta": 0
+    },
+    {
+      "id": "H3",
+      "before": 50,
+      "after": 50,
+      "delta": 0
+    },
+    {
+      "id": "H4",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "H5",
+      "before": 98,
+      "after": 100,
+      "delta": 2
+    },
+    {
+      "id": "H6",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "H7",
+      "before": 98,
+      "after": 98,
+      "delta": 0
+    },
+    {
+      "id": "H8",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    }
+  ],
+  "limitations": "Một lần chạy mỗi phiên bản; judge có thể sai. Không suy ra quan hệ nhân quả từ chênh lệch điểm."
+}

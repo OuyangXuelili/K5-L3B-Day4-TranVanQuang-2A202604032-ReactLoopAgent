@@ -4,6 +4,33 @@ Bạn sẽ tự viết một agent loop bằng Python. Agent dùng dữ liệu t
 
 **Mục tiêu:** gọi LLM → thực thi tool → đưa kết quả trở lại LLM → lặp đến khi trả lời hoặc hết giới hạn. Thời lượng dự kiến: **4 giờ**, gồm nghỉ 10 phút. Toàn bộ các bước trong [GUIDE.md](GUIDE.md) là nội dung của lab. Đọc thêm [RUBRIC.md](RUBRIC.md) để biết tiêu chí đánh giá.
 
+## Bản hoàn thiện
+
+Phiên bản **v2** thêm checklist bằng chứng để ngăn model bỏ bước điều tra, kiểm tra nguồn theo provider, chặn khẳng định trạng thái khi tool lỗi và giới hạn retry 429. **85 tests pass**. Xem [báo cáo và kết quả thực nghiệm](BAO_CAO.md), [so sánh before/after](artifacts/eval_comparison.json) và [chỉ mục bằng chứng](artifacts/README.md).
+
+Kết quả cuối bằng Gemini trực tiếp `gemini-3.5-flash-lite`: bài chính **99,91 → 100/100** (22/22 case mỗi bản), bonus **100/100 → 15/15** (10/10). Đây là điểm eval tham khảo; xem báo cáo về lỗi còn lại và giới hạn judge.
+
+Các bản thực nghiệm trước được giữ riêng trong `artifacts/v1/`, `artifacts/v2a/`, `artifacts/v2b/` và `artifacts/v2c/`. Không so sánh điểm giữa các model như một cặp before/after.
+
+Chạy trên PowerShell, không cần cài thêm package:
+
+```powershell
+python -m unittest discover -s tests -v
+python -m unittest discover -s bonus -p 'test_*.py' -v
+python -X utf8 scripts/demo_offline.py
+python -X utf8 scripts/demo_investigation.py
+```
+
+Để chạy eval thật, tạo `.env` từ `.env.example`, điền provider, model và key của bạn. File `.env` được Git bỏ qua. Script dưới đây chỉ đọc file cấu hình khi có `--env-file`; các entrypoint gốc vẫn đọc biến môi trường shell như thiết kế ban đầu.
+
+```powershell
+python -X utf8 scripts/run_comparison.py --env-file .env --resume --workers 2 --request-interval 6.2
+```
+
+Lệnh trên chạy `before` từ source v1 được đóng băng, `after` từ agent v2 và bonus. Cả hai bản chính dùng cùng model/provider/judge/dataset và budget. Kết quả mới được lưu trong `artifacts/v2/`; chỉ thay JSON ở gốc sau khi chấm đủ. Cấu hình mẫu dùng Gemini trực tiếp, `gemini-3.5-flash-lite`, `MAX_TOKENS=4096` và `GEMINI_REASONING_EFFORT=minimal`. Các demo offline dùng scripted provider, không có điểm LLM judge.
+
+Khi provider/judge lỗi khiến case `unscored`, có thể thêm `--resume` vào cùng lệnh eval để chạy lại các case chưa chấm. Nếu agent đã hoàn thành nhưng judge lỗi, script chỉ chấm lại cùng answer/trace. Script giữ nguyên mọi case đã có điểm, kể cả điểm thấp hoặc 0, và lưu bản kết quả trước vào `artifacts/`. Giữ nguyên provider, model, dataset, `MAX_TOKENS` và `--max-steps` khi resume.
+
 ## Agent hoạt động như thế nào?
 
 Sơ đồ dưới đây mô tả bài chính với hai tools; phần bonus dùng bộ tools riêng. Agent nhận câu hỏi cùng system prompt và lịch sử hội thoại. LLM đề xuất tool call; Python thực thi tool, đưa kết quả về context rồi gọi LLM tiếp. Quá trình dừng khi có câu trả lời, gặp lỗi hoặc hết giới hạn bước.

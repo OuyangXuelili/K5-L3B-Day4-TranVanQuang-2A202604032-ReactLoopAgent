@@ -36,6 +36,16 @@ class Provider:
         if not model:
             raise ValueError('Cần đặt MODEL là model có hỗ trợ tool calling.')
         self.name, self.model = name, model
+        self.max_tokens = int(os.getenv('MAX_TOKENS', '4096'))
+        if self.max_tokens < 1:
+            raise ValueError('MAX_TOKENS phải >= 1.')
+        reasoning = os.getenv('REASONING_ENABLED')
+        if reasoning is not None and reasoning.lower() not in ('true', 'false'):
+            raise ValueError('REASONING_ENABLED phải là true hoặc false.')
+        self.reasoning_enabled = None if reasoning is None else reasoning.lower() == 'true'
+        self.gemini_reasoning_effort = os.getenv('GEMINI_REASONING_EFFORT')
+        if self.gemini_reasoning_effort not in (None, 'none', 'minimal', 'low', 'medium', 'high'):
+            raise ValueError('GEMINI_REASONING_EFFORT không hợp lệ.')
         key_name, self.url = CONFIG[name]
         self.key = os.getenv(key_name)
         if not self.key:
@@ -44,7 +54,14 @@ class Provider:
     def complete(self, messages, schemas):
         if self.name == 'anthropic':
             return self._anthropic(messages, schemas)
-        payload = {'model': self.model, 'messages': messages}
+        payload = {'model': self.model, 'messages': messages, 'max_tokens': self.max_tokens}
+        if self.name == 'openrouter' and self.reasoning_enabled is not None:
+            payload['reasoning'] = {'enabled': self.reasoning_enabled}
+        elif self.name == 'gemini' and self.gemini_reasoning_effort:
+            payload['reasoning_effort'] = self.gemini_reasoning_effort
+        elif (self.name == 'gemini' and self.reasoning_enabled is False
+              and self.model.startswith('gemini-2.5-flash')):
+            payload['reasoning_effort'] = 'none'
         if schemas:
             payload['tools'] = schemas
         data = post_json(self.url, {'Authorization': f'Bearer {self.key}'}, payload)
@@ -75,7 +92,7 @@ class Provider:
             else:
                 native.append({'role': 'user', 'content': m['content']})
         tools = [{'name': x['function']['name'], 'description': x['function']['description'], 'input_schema': x['function']['parameters']} for x in schemas]
-        payload = {'model': self.model, 'max_tokens': 1024, 'system': system, 'messages': native}
+        payload = {'model': self.model, 'max_tokens': self.max_tokens, 'system': system, 'messages': native}
         if tools:
             payload['tools'] = tools
         data = post_json(self.url, {'x-api-key': self.key, 'anthropic-version': '2023-06-01'}, payload)

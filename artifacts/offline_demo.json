@@ -1,0 +1,252 @@
+{
+  "kind": "offline_scripted_demo",
+  "uses_real_llm": false,
+  "note": "Cố ý mô phỏng final thiếu URL để kiểm tra validator; không có điểm LLM judge.",
+  "before": {
+    "status": "completed",
+    "answer": "Theo snapshot 2026-11-09T03:50:47.638054+00:00, incident \"Fedramp Customers have Delayed Purges\" có trạng thái identified. Đây là bằng chứng snapshot, chưa xác nhận tình trạng thực tế hay nguyên nhân lỗi của người dùng.",
+    "trace": [
+      {
+        "event": "model",
+        "step": 1,
+        "finish": "tool_calls",
+        "tool_calls": 1
+      },
+      {
+        "event": "tool",
+        "step": 1,
+        "call_id": "status",
+        "name": "get_status",
+        "arguments": {
+          "provider": "cloudflare",
+          "component": "Cache Purge"
+        },
+        "result": {
+          "provider": "cloudflare",
+          "captured_at": "2026-11-09T03:50:47.638054+00:00",
+          "overall": {
+            "indicator": "major",
+            "description": "Partial System Outage"
+          },
+          "components": [
+            {
+              "name": "CDN Cache Purge",
+              "status": "degraded_performance"
+            }
+          ],
+          "incidents": [
+            {
+              "id": "wp49bp8bqo6c",
+              "name": "Fedramp Customers have Delayed Purges",
+              "status": "identified",
+              "updated_at": "2026-11-06T17:59:13.680Z"
+            },
+            {
+              "id": "5tlm9r9j9rpo",
+              "name": "Cache purge delays in Qingdao Shandong, China",
+              "status": "resolved",
+              "updated_at": "2026-10-31T06:57:35.247Z"
+            },
+            {
+              "id": "8s6pn9rvof3l",
+              "name": "Cache Purging Delays Affecting Requests Routed Through EEUR",
+              "status": "resolved",
+              "updated_at": "2026-10-27T16:14:34.056Z"
+            }
+          ],
+          "matching_incidents_in_last_50": 3,
+          "note": "Chỉ tìm theo chuỗi trong 50 incident gần nhất; không tìm thấy không chứng minh không có sự cố.",
+          "source": "https://www.cloudflarestatus.com"
+        }
+      },
+      {
+        "event": "model",
+        "step": 2,
+        "finish": "tool_calls",
+        "tool_calls": 1
+      },
+      {
+        "event": "tool",
+        "step": 2,
+        "call_id": "details",
+        "name": "get_incident_details",
+        "arguments": {
+          "provider": "cloudflare",
+          "incident_id": "wp49bp8bqo6c"
+        },
+        "result": {
+          "ok": true,
+          "provider": "cloudflare",
+          "captured_at": "2026-11-09T03:50:47.638054+00:00",
+          "id": "wp49bp8bqo6c",
+          "name": "Fedramp Customers have Delayed Purges",
+          "status": "identified",
+          "created_at": "2026-11-06T17:47:15.545Z",
+          "updated_at": "2026-11-06T17:59:13.680Z",
+          "components": [
+            "CDN Cache Purge"
+          ],
+          "updates": [
+            {
+              "status": "identified",
+              "created_at": "2026-11-06T17:59:13.680Z",
+              "body": "We are continuing to work on a fix for the issue.",
+              "truncated": false
+            },
+            {
+              "status": "investigating",
+              "created_at": "2026-11-06T17:47:15.545Z",
+              "body": "Cloudflare has identified a bug with our purge pipeline impacting fedramp customers. Stale content may be served until expired. Non-fedramp customers are not impacted. ",
+              "truncated": false
+            }
+          ],
+          "updates_total": 2,
+          "url": "https://www.cloudflarestatus.com/incidents/wp49bp8bqo6c"
+        }
+      },
+      {
+        "event": "model",
+        "step": 3,
+        "finish": "stop",
+        "tool_calls": 0
+      }
+    ],
+    "usage": [
+      {},
+      {},
+      {}
+    ]
+  },
+  "after": {
+    "status": "completed",
+    "answer": "Theo snapshot 2026-11-09T03:50:47.638054+00:00, incident \"Fedramp Customers have Delayed Purges\" có trạng thái identified. Đây là bằng chứng snapshot, chưa xác nhận tình trạng thực tế hay nguyên nhân lỗi của người dùng. Nguồn: https://www.cloudflarestatus.com/incidents/wp49bp8bqo6c",
+    "trace": [
+      {
+        "event": "model",
+        "step": 1,
+        "finish": "tool_calls",
+        "tool_calls": 1
+      },
+      {
+        "event": "tool",
+        "step": 1,
+        "call_id": "status",
+        "name": "get_status",
+        "arguments": {
+          "provider": "cloudflare",
+          "component": "Cache Purge"
+        },
+        "result": {
+          "provider": "cloudflare",
+          "captured_at": "2026-11-09T03:50:47.638054+00:00",
+          "overall": {
+            "indicator": "major",
+            "description": "Partial System Outage"
+          },
+          "components": [
+            {
+              "name": "CDN Cache Purge",
+              "status": "degraded_performance"
+            }
+          ],
+          "incidents": [
+            {
+              "id": "wp49bp8bqo6c",
+              "name": "Fedramp Customers have Delayed Purges",
+              "status": "identified",
+              "updated_at": "2026-11-06T17:59:13.680Z"
+            },
+            {
+              "id": "5tlm9r9j9rpo",
+              "name": "Cache purge delays in Qingdao Shandong, China",
+              "status": "resolved",
+              "updated_at": "2026-10-31T06:57:35.247Z"
+            },
+            {
+              "id": "8s6pn9rvof3l",
+              "name": "Cache Purging Delays Affecting Requests Routed Through EEUR",
+              "status": "resolved",
+              "updated_at": "2026-10-27T16:14:34.056Z"
+            }
+          ],
+          "matching_incidents_in_last_50": 3,
+          "note": "Chỉ tìm theo chuỗi trong 50 incident gần nhất; không tìm thấy không chứng minh không có sự cố.",
+          "source": "https://www.cloudflarestatus.com"
+        }
+      },
+      {
+        "event": "model",
+        "step": 2,
+        "finish": "tool_calls",
+        "tool_calls": 1
+      },
+      {
+        "event": "tool",
+        "step": 2,
+        "call_id": "details",
+        "name": "get_incident_details",
+        "arguments": {
+          "provider": "cloudflare",
+          "incident_id": "wp49bp8bqo6c"
+        },
+        "result": {
+          "ok": true,
+          "provider": "cloudflare",
+          "captured_at": "2026-11-09T03:50:47.638054+00:00",
+          "id": "wp49bp8bqo6c",
+          "name": "Fedramp Customers have Delayed Purges",
+          "status": "identified",
+          "created_at": "2026-11-06T17:47:15.545Z",
+          "updated_at": "2026-11-06T17:59:13.680Z",
+          "components": [
+            "CDN Cache Purge"
+          ],
+          "updates": [
+            {
+              "status": "identified",
+              "created_at": "2026-11-06T17:59:13.680Z",
+              "body": "We are continuing to work on a fix for the issue.",
+              "truncated": false
+            },
+            {
+              "status": "investigating",
+              "created_at": "2026-11-06T17:47:15.545Z",
+              "body": "Cloudflare has identified a bug with our purge pipeline impacting fedramp customers. Stale content may be served until expired. Non-fedramp customers are not impacted. ",
+              "truncated": false
+            }
+          ],
+          "updates_total": 2,
+          "url": "https://www.cloudflarestatus.com/incidents/wp49bp8bqo6c"
+        }
+      },
+      {
+        "event": "model",
+        "step": 3,
+        "finish": "stop",
+        "tool_calls": 0
+      },
+      {
+        "event": "validation_missing_source",
+        "step": 3,
+        "missing_sources": {
+          "cloudflare": [
+            "https://www.cloudflarestatus.com/incidents/wp49bp8bqo6c"
+          ]
+        },
+        "answer": "Theo snapshot 2026-11-09T03:50:47.638054+00:00, incident \"Fedramp Customers have Delayed Purges\" có trạng thái identified. Đây là bằng chứng snapshot, chưa xác nhận tình trạng thực tế hay nguyên nhân lỗi của người dùng."
+      },
+      {
+        "event": "model",
+        "step": 4,
+        "finish": "stop",
+        "tool_calls": 0
+      }
+    ],
+    "usage": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  }
+}

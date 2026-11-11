@@ -1,0 +1,141 @@
+{
+  "implementation": "v2-investigation-checklist",
+  "hash_normalization": "lf",
+  "git_base_commit": "fc52c14a162c231d290d37838bddd87c80e877ba",
+  "config_core": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "judge_provider": "gemini",
+    "judge_model": "gemini-3.5-flash-lite",
+    "max_steps": 8,
+    "dataset": "core"
+  },
+  "config_bonus": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "judge_provider": "gemini",
+    "judge_model": "gemini-3.5-flash-lite",
+    "max_steps": 16,
+    "dataset": "bonus"
+  },
+  "max_tokens": 4096,
+  "gemini_reasoning_effort": "minimal",
+  "reasoning_enabled": null,
+  "protected_sha256": {
+    "bonus/fixtures/digitalocean.json": "6aba084edb60100c37bc02c022584202f7355916e872ec211f61d31bba69641a",
+    "bonus/fixtures/npm.json": "9d61a1776c7406001222a941d5873364c743b170f8cb31c2d8bb8fd3b5795dad",
+    "bonus/fixtures/vercel.json": "8f84793557582fa81bdf47b45d24187de813f84ff71beabb443a820322381a4f",
+    "fixtures/cloudflare.json": "896e753ad1ff6d67d5817781a487be597335dc5c124bbf0328098738bb202ab4",
+    "fixtures/github.json": "c4b72f0ab397fa72702908dc1d73aa893af66fff158b3b1bcabf223afb792ad7",
+    "evals/cases.json": "3070f2dff24d9518b690213c280a318ff880931ef042603d7371f4280b930e34",
+    "bonus/cases.json": "20aee5e8aec1a1fd6d75bd5c310d1a4d59a3865ba9fdcab236a1da8db5d9bf8f",
+    "evals/scenarios.py": "019de84221bc343299acf596cfddc033bd24fa064df0c30c03f36e75fe1c1ef2",
+    "evals/grading.py": "290d342cf40c49926bd635a8046ffb6106321821e3d68ce4286b08878f3c26bf",
+    "RUBRIC.md": "e59bf7e89c69f9d580030a2ec5cf878ded8de88fb50be923ab9adde9d9e204d7"
+  },
+  "delivery_source_sha256": {
+    "agent.py": "62fa7fb5b032d2b00ace4b76de76cdd14d8915d491dd37f37ee442053e7c5205",
+    "bonus/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bonus/test_agent.py": "64dcd86a12b5a10cd5fd1cb1d48cf23e35e8b7cb7aecb3f73e93b3531846bcda",
+    "bonus/tools.py": "1a552c6e1aba591a400706852a6df8fed6901ec4301c1ad7eda12eee452bcf80",
+    "evals/grading.py": "290d342cf40c49926bd635a8046ffb6106321821e3d68ce4286b08878f3c26bf",
+    "evals/run_evals.py": "61765fac6e12eec093641af953f8f6b3130244085570475bd858b9f7daf70da9",
+    "evals/scenarios.py": "019de84221bc343299acf596cfddc033bd24fa064df0c30c03f36e75fe1c1ef2",
+    "experiments/baseline_agent.py": "83e60f67d3f36211599f412448fcc4c585c3d9dba3e81b511c67b990688dc982",
+    "experiments/previous_agent.py": "187c3f854929d8f3b52d3a0a12d1be3e314153dddecdd63abc0028e924cbe177",
+    "investigation.py": "a3a7afdad3186eb89c4c6d96557d7c6f16c67e26582d99a8bc5818f6d43e739e",
+    "providers.py": "4c72c2c3710848cda1165b15c8ad64d508735829988b419795de551b8d11c110",
+    "run.py": "0df79e45562f31bb3a04c9a3ca0f20c340581b63d5f02ae386b922351557388b",
+    "scripts/compare_evals.py": "5342928251c2a647e8cc4a623fbe4ce0c45a7ea7d6db3e0981e0168e84891e0f",
+    "scripts/demo_investigation.py": "90a1977516983c58c05badba3fdb95930468078db860aa790994fd859a3c51db",
+    "scripts/demo_offline.py": "0a4f4c95fc3e0e4d9b311c74acfad0ab28388086f167131d98bcd2f6de9198c1",
+    "scripts/evaluate.py": "a03064c0f2cd1202fcf82231a844bbf4847d77fc168325f880c6bb7a2e57f3be",
+    "scripts/run_comparison.py": "a605face96ab680f2edeeb98e63c4c03c501126eb384ee40a781b7dd9b8780ac",
+    "scripts/verify_delivery.py": "eee8d22e0a256e07b71729533ebeeea07a92f81659c86082007e12dfd13fc219",
+    "status_tools.py": "015c860a077526580da312dd68560e4e2ace0df2f28a8743a72172e353ba8f3d",
+    "tests/test_agent_robustness.py": "f569d0be0ebb5425efc821dbe4a45f8a6e72f026a82ff4f4fea2ba9660bd59f4",
+    "tests/test_bonus.py": "8a9258c2c952712c6d8eb3528829c7523017d757ca66b483dc850b54eb45b6ed",
+    "tests/test_experiment_scripts.py": "4710dd39064e50231c85f082172ed9e565f2b82eb803de2711b742f3dadf4627",
+    "tests/test_grading.py": "8e88124543ee4c259bbdba075e2a7c59367e3787859c5b8a56462a09527d8c2a",
+    "tests/test_investigation.py": "4725d454828a91e2bd63b259bd47e2090b2d8f542746d1ef5f4a1f81a668bbe2",
+    "tests/test_lab.py": "2898cbdea1aeb6c72a2b5c51741b60be280b7f9dbc7641322065f421265cfa7e",
+    "tests/test_validation.py": "e5ed5c212b4f63790d529496be85ccebfdff6fc1b99b99b79b0767eb5ce87a76"
+  },
+  "final_report_sha256": {
+    "eval_before.json": "504df7ab4910c162b65246ce064c441608d3eb59f16c3836a1d9f31feb6ddaf3",
+    "eval_after.json": "0ef5dcc3b3af1c660ce7155587d404d3eaa0a927a97b0e4cbb0bdc751ad439e2",
+    "eval_bonus.json": "d6b8979ea0383eb5b2882f4aca9034b9f8a190f3a42dbc61d7ce8d893d5dcebc"
+  },
+  "metrics": {
+    "before": {
+      "total_cases": 22,
+      "scored_cases": 22,
+      "unscored_cases": 0,
+      "score_0_100": 99.91,
+      "partial_mean_0_100": null,
+      "agent_model_calls": 58,
+      "source_revision_events": 0,
+      "agent_usage": {
+        "tokens": 85467,
+        "cost_usd": null
+      },
+      "judge_usage": {
+        "tokens": 43731,
+        "cost_usd": null
+      },
+      "total_cost_usd": null,
+      "mechanical_violations": {}
+    },
+    "after": {
+      "total_cases": 22,
+      "scored_cases": 22,
+      "unscored_cases": 0,
+      "score_0_100": 100.0,
+      "partial_mean_0_100": null,
+      "agent_model_calls": 68,
+      "source_revision_events": 5,
+      "agent_usage": {
+        "tokens": 152151,
+        "cost_usd": null
+      },
+      "judge_usage": {
+        "tokens": 55767,
+        "cost_usd": null
+      },
+      "total_cost_usd": null,
+      "mechanical_violations": {}
+    },
+    "bonus": {
+      "total_cases": 10,
+      "scored_cases": 10,
+      "unscored_cases": 0,
+      "score_0_100": 100.0,
+      "partial_mean_0_100": null,
+      "bonus_points_0_15": 15.0,
+      "agent_model_calls": 30,
+      "source_revision_events": 0,
+      "agent_usage": {
+        "tokens": 105844,
+        "cost_usd": null
+      },
+      "judge_usage": {
+        "tokens": 37102,
+        "cost_usd": null
+      },
+      "total_cost_usd": null,
+      "mechanical_violations": {}
+    }
+  },
+  "historical_experiments": {
+    "v1": "artifacts/v1",
+    "gemini31_initial": "artifacts/v2a",
+    "gemini31_before_id_binding_fix": "artifacts/v2b",
+    "gemini35_before_latest_and_scope_fixes": "artifacts/v2c",
+    "gemini31_incomplete_rerun": "artifacts/gemini31_partial"
+  },
+  "limitations": [
+    "One retained scored trajectory per case and implementation; same-model judge.",
+    "Usage excludes discarded failed attempts and separate probes; no Gemini cost field.",
+    "Eval score is not the main lab rubric grade."
+  ]
+}

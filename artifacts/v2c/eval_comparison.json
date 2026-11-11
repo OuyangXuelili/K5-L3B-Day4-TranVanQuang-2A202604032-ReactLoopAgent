@@ -1,0 +1,178 @@
+{
+  "same_config": true,
+  "config_differences": {},
+  "before": {
+    "total_cases": 22,
+    "scored_cases": 22,
+    "unscored_cases": 0,
+    "score_0_100": 99.91,
+    "partial_mean_0_100": null,
+    "agent_model_calls": 58,
+    "source_revision_events": 0,
+    "agent_usage": {
+      "tokens": 85467,
+      "cost_usd": null
+    },
+    "judge_usage": {
+      "tokens": 43731,
+      "cost_usd": null
+    },
+    "total_cost_usd": null,
+    "mechanical_violations": {}
+  },
+  "after": {
+    "total_cases": 22,
+    "scored_cases": 22,
+    "unscored_cases": 0,
+    "score_0_100": 99.77,
+    "partial_mean_0_100": null,
+    "agent_model_calls": 69,
+    "source_revision_events": 7,
+    "agent_usage": {
+      "tokens": 158039,
+      "cost_usd": null
+    },
+    "judge_usage": {
+      "tokens": 58515,
+      "cost_usd": null
+    },
+    "total_cost_usd": null,
+    "mechanical_violations": {}
+  },
+  "score_delta": -0.14,
+  "cases": [
+    {
+      "id": "E1",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "E2",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "E3",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "E4",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "E5",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "E6",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "A1",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "A2",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "A3",
+      "before": 100,
+      "after": 95,
+      "delta": -5
+    },
+    {
+      "id": "A4",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "A5",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "A6",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "A7",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "A8",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "H1",
+      "before": 98,
+      "after": 100,
+      "delta": 2
+    },
+    {
+      "id": "H2",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "H3",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "H4",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "H5",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "H6",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "H7",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    },
+    {
+      "id": "H8",
+      "before": 100,
+      "after": 100,
+      "delta": 0
+    }
+  ],
+  "limitations": "Một lần chạy mỗi phiên bản; judge có thể sai. Không suy ra quan hệ nhân quả từ chênh lệch điểm."
+}

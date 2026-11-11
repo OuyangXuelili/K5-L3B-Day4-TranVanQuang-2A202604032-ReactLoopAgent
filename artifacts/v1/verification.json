@@ -1,0 +1,53 @@
+{
+  "verified_at_utc": "2026-11-11T07:53:11.139734+00:00",
+  "python_version": "3.13.14",
+  "tests_passed": 59,
+  "all_54_eval_case_results_scored": true,
+  "core_configs_match": true,
+  "core_score_before": 92.36,
+  "core_score_after": 91.45,
+  "bonus_summary": {
+    "total_cases": 10,
+    "scored_cases": 10,
+    "unscored_cases": 0,
+    "score_0_100": 92.2,
+    "partial_mean_0_100": null,
+    "bonus_points_0_15": 13.83
+  },
+  "bonus_metrics": {
+    "total_cases": 10,
+    "scored_cases": 10,
+    "unscored_cases": 0,
+    "score_0_100": 92.2,
+    "partial_mean_0_100": null,
+    "bonus_points_0_15": 13.83,
+    "agent_model_calls": 37,
+    "source_revision_events": 0,
+    "agent_usage": {
+      "tokens": 120544,
+      "cost_usd": 0
+    },
+    "judge_usage": {
+      "tokens": 52559,
+      "cost_usd": 0
+    },
+    "total_cost_usd": 0,
+    "mechanical_violations": {
+      "B6": [
+        "Chưa gọi tool cần thiết: get_incident_details"
+      ]
+    }
+  },
+  "source_gate_missing_cases": {
+    "eval_before.json": [
+      "E4"
+    ],
+    "eval_after.json": [],
+    "eval_bonus.json": []
+  },
+  "protected_files_unchanged": 10,
+  "api_key_absent_from_deliverable_files": true,
+  "env_ignored": true,
+  "python_3_10_syntax_compatible": 8,
+  "git_diff_check": "pass"
+}

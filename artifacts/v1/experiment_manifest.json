@@ -1,0 +1,66 @@
+{
+  "created_at_utc": "2026-11-11T07:29:08.591647+00:00",
+  "base_commit": "fc52c14a162c231d290d37838bddd87c80e877ba",
+  "provider": "openrouter",
+  "agent_model": "google/gemini-2.5-flash",
+  "judge_model": "google/gemini-2.5-flash",
+  "max_tokens": 4096,
+  "max_steps_core": 8,
+  "max_steps_bonus": 16,
+  "protected_sha256": {
+    "fixtures/cloudflare.json": "04eb4851cae0b59cda64313fb82b94c5de7ab8e3a47016844b97762c18bbd57e",
+    "fixtures/github.json": "ef189b6b8376d42b50b5676e08264f5745a69141b19cd0ed3f86a1b74217f11c",
+    "bonus/fixtures/digitalocean.json": "aa986964026fa859b5f59d7300dacf2cd4b08985760bb14f66d6c0dcc89213c4",
+    "bonus/fixtures/npm.json": "60b5baf13aca675d70037f15f350c09fccc462fc2483a90d3f6287e068246154",
+    "bonus/fixtures/vercel.json": "218c855f022e2001d2115fa490605672df83ced02a34bf5c6c2bd9aa402e591b",
+    "evals/cases.json": "bca3ea31cb42dae5a952a7522bf87242b25117e565d1a5c3c636c18635abf50b",
+    "bonus/cases.json": "393b97bf9ebb975ce1ae3505cc25eb37fc2f5607aa443803276d039b87e64a22",
+    "evals/scenarios.py": "193c39f8f82cdaa3c4f7b68715ddaf94cdae1f4f760bcc893ccaa42e84436a1f",
+    "evals/grading.py": "e64f759f933830800788f6d315768a1152214faefb947585a1ff9148e7761f25",
+    "RUBRIC.md": "d8276e8dd5870f9873e98445a08cc4b89388eb1f939f4ad54cd5ad260cccd385"
+  },
+  "core_before_workers": 3,
+  "core_after_workers": 1,
+  "notes": [
+    "Only unscored cases were resumed after infrastructure errors; low scores were retained.",
+    "Raw unsuccessful attempts are preserved in artifacts/.",
+    "Core comparison excludes costs of discarded infrastructure/configuration attempts."
+  ],
+  "bonus_model": "nvidia/nemotron-3.5-lightning:free",
+  "bonus_max_tokens": 4096,
+  "bonus_request_interval_seconds": 3.2,
+  "delivery_source_sha256": {
+    "agent.py": "5f5124c40186ccb46c6952a87ae0b052260a0a123f1dcd087db48cc8bc11365b",
+    "providers.py": "34e2345b654090bb5dba6118dc2370f0692ba17907f06042cbea3ed86cfab755",
+    "run.py": "2ea8c8058ffde38ed3c84c69b1b599a0f889fa24587119b80c16c81c46f31ed8",
+    "status_tools.py": "e38269099ebdab59265a0eeda952287ea056e6834a3a4ad892dc1dec1e0b3a29",
+    "scripts/compare_evals.py": "0f6b9b3cff69340f858c7f8b138082a74eb65a41bf7ceea026090d4799807e5b",
+    "scripts/demo_offline.py": "0a4f4c95fc3e0e4d9b311c74acfad0ab28388086f167131d98bcd2f6de9198c1",
+    "scripts/evaluate.py": "cd9d28a06202c7a3ccf175def47ffef110c640bb524590cc1ef35f69e87649cb",
+    "experiments/baseline_agent.py": "d979f6a3e15b4bb5e14777b78a573980d2c6d54d562ec08ea6da13918e21af86"
+  },
+  "final_summaries": {
+    "eval_before.json": {
+      "total_cases": 22,
+      "scored_cases": 22,
+      "unscored_cases": 0,
+      "score_0_100": 92.36,
+      "partial_mean_0_100": null
+    },
+    "eval_after.json": {
+      "total_cases": 22,
+      "scored_cases": 22,
+      "unscored_cases": 0,
+      "score_0_100": 91.45,
+      "partial_mean_0_100": null
+    },
+    "eval_bonus.json": {
+      "total_cases": 10,
+      "scored_cases": 10,
+      "unscored_cases": 0,
+      "score_0_100": 92.2,
+      "partial_mean_0_100": null,
+      "bonus_points_0_15": 13.83
+    }
+  }
+}

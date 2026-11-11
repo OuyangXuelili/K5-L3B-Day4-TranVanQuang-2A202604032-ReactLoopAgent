@@ -1,0 +1,87 @@
+{
+  "summary": {
+    "total_cases": 1,
+    "scored_cases": 0,
+    "unscored_cases": 1,
+    "score_0_100": null,
+    "partial_mean_0_100": null
+  },
+  "config": {
+    "provider": "openrouter",
+    "model": "nvidia/nemotron-3.5-lightning:free",
+    "judge_provider": "openrouter",
+    "judge_model": "nvidia/nemotron-3.5-lightning:free",
+    "max_steps": 8,
+    "dataset": "core"
+  },
+  "cases": [
+    {
+      "id": "H1",
+      "question": "Điều tra incident GitHub h02n9572mx9y. Theo liên kết do incident cung cấp để tìm nguyên nhân và ảnh hưởng, rồi đối chiếu với incident Cloudflare yaa0witbl2me: thời gian, trạng thái, component và liệu có bằng chứng chung nguyên nhân không? Dẫn nguồn cho từng bên.",
+      "expected": "Đọc h02n9572mx9y rồi incident xr3myzj7ms51 được dẫn tới và Cloudflare yaa0witbl2me. Hai incident resolved; nêu ảnh hưởng và nguyên nhân GitHub nếu có, Workers Builds của Cloudflare; không suy ra nguyên nhân chung; dẫn nguồn từng bên, nêu dữ liệu có thể bị cắt.",
+      "scenario": "normal",
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "judge_provider": "openrouter",
+      "judge_model": "nvidia/nemotron-3.5-lightning:free",
+      "result": {
+        "status": "error",
+        "answer": "",
+        "trace": [
+          {
+            "event": "provider_error",
+            "step": 1,
+            "error": "PROVIDER_ERROR (RuntimeError); kiểm tra kết nối, model, key và quota.",
+            "http_status": 429
+          }
+        ],
+        "usage": [],
+        "error": "PROVIDER_ERROR (RuntimeError); kiểm tra kết nối, model, key và quota."
+      },
+      "grade": {
+        "score": null,
+        "status": "unscored",
+        "reason": "Run lỗi; chưa phân biệt được lỗi agent và hạ tầng.",
+        "mechanical": {
+          "violations": [
+            "Chưa gọi tool cần thiết: get_incident_details",
+            "Cần tool calls ở ít nhất 2 model steps khác nhau."
+          ],
+          "score_cap": 50,
+          "tool_calls": 0,
+          "tool_steps": 0
+        },
+        "judge_usage": {}
+      }
+    }
+  ],
+  "experiment": {
+    "variant": "after",
+    "source_validation": true,
+    "max_tokens": 4096,
+    "started_at_utc": "2026-11-11T08:23:27.478298+00:00",
+    "request_interval_seconds": 3.2,
+    "reasoning_enabled": "false",
+    "implementation": "v2-investigation-checklist",
+    "implementation_sha256": {
+      "agent.py": "b6abd34a5239bf805a556e84d15ad8960c1e4a32675280af9d15c056024d0b18",
+      "investigation.py": "796b8249018d8e25e5157d74a8cad37301a4a77ff6a363e2b510deae3073008d",
+      "providers.py": "8be1e44181a31db20fe0650690f4a447e2d1ca7a96b37b7f4a234aa44a7e51b2"
+    },
+    "preserved_scored_cases": [],
+    "rejudged_without_rerunning_agent": [],
+    "previous_attempt": null,
+    "protected_sha256": {
+      "fixtures/cloudflare.json": "04eb4851cae0b59cda64313fb82b94c5de7ab8e3a47016844b97762c18bbd57e",
+      "fixtures/github.json": "ef189b6b8376d42b50b5676e08264f5745a69141b19cd0ed3f86a1b74217f11c",
+      "bonus/fixtures/digitalocean.json": "aa986964026fa859b5f59d7300dacf2cd4b08985760bb14f66d6c0dcc89213c4",
+      "bonus/fixtures/npm.json": "60b5baf13aca675d70037f15f350c09fccc462fc2483a90d3f6287e068246154",
+      "bonus/fixtures/vercel.json": "218c855f022e2001d2115fa490605672df83ced02a34bf5c6c2bd9aa402e591b",
+      "evals/cases.json": "bca3ea31cb42dae5a952a7522bf87242b25117e565d1a5c3c636c18635abf50b",
+      "bonus/cases.json": "393b97bf9ebb975ce1ae3505cc25eb37fc2f5607aa443803276d039b87e64a22",
+      "evals/scenarios.py": "193c39f8f82cdaa3c4f7b68715ddaf94cdae1f4f760bcc893ccaa42e84436a1f",
+      "evals/grading.py": "e64f759f933830800788f6d315768a1152214faefb947585a1ff9148e7761f25",
+      "RUBRIC.md": "d8276e8dd5870f9873e98445a08cc4b89388eb1f939f4ad54cd5ad260cccd385"
+    }
+  }
+}
